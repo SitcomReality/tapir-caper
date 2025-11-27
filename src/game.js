@@ -207,8 +207,9 @@ export class Game {
             let kx = 0, ky = 0;
             if (this.keys.w) ky += 1;
             if (this.keys.s) ky -= 1;
-            if (this.keys.a) kx += 1;
-            if (this.keys.d) kx -= 1;
+            // A should move left (negative), D should move right (positive)
+            if (this.keys.a) kx -= 1;
+            if (this.keys.d) kx += 1;
             
             // Only override joystick if keys are pressed
             if (kx !== 0 || ky !== 0) {
